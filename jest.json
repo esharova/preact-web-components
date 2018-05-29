@@ -1,0 +1,28 @@
+{
+  "automock": false,
+  "roots": [ "<rootDir>" ],
+  "preset": "jest-puppeteer",
+  "testRegex": "",
+  "modulePaths": [
+    "node_modules/"
+  ],
+  "moduleDirectories": [
+    "node_modules/"
+  ],
+  "transform": {
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  "transformIgnorePatterns": [],
+  "moduleNameMapper": {
+    "^.*[.](jpg|gif|png|css|ejs)$": "<rootDir>/test/noop.js"
+  },
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "jsx"
+  ],
+  "unmockedModulePathPatterns": [
+    "<rootDir>/node_modules/preact",
+    "<rootDir>/node_modules/preact-custom-element"
+  ]
+}

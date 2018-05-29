@@ -1,0 +1,25 @@
+{
+  "name": "preact-web-components",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "preact": "^8.2.9",
+    "preact-custom-element": "^3.0.0",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest --config=jest.json --no-cache --detectOpenHandles",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-preact": "^0.2.0",
+    "jest": "^23.0.0",
+    "jest-puppeteer": "^3.0.1",
+    "puppeteer": "^1.4.0"
+  }
+}

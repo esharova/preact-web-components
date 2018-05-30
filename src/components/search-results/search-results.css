@@ -5,9 +5,8 @@
         width: 100%;
         text-align: left;
         min-height: 100px;
-        max-height: 400px;
         overflow: auto;
-        overflow-x: hidden;
+        overflow-y: hidden;
         overflow-scrolling: touch;
     }
 }

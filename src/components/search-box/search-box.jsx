@@ -1,24 +1,27 @@
 import { h, Component } from 'preact'; /** @jsx h */
+import cn from 'cn-decorator';
 
 import { SearchResults } from '../search-results/search-results';
+import './search-box.css';
 
+@cn('search-box')
 export class SearchBox extends Component {
     state = {
         text: this.props.query || ''
     };
-    render(props, { text }) {
+    render(cn) {
         return (
-            <div {...props}>
+            <div className={ cn() } { ...this.props }>
                 <header>
                     <h1>Github Search</h1>
                     <input
                         type="search"
-                        value={ text}
+                        value={ this.state.text}
                         onInput={ this.handleSearch.bind(this) }
                     />
                 </header>
                 <main>
-                    <SearchResults query={text} />
+                    <SearchResults query={ this.state.text } />
                 </main>
             </div>
         );

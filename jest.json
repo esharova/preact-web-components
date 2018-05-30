@@ -1,6 +1,6 @@
 {
   "automock": false,
-  "roots": [ "<rootDir>" ],
+  "roots": [ "<rootDir>/test" ],
   "preset": "jest-puppeteer",
   "testRegex": "",
   "modulePaths": [

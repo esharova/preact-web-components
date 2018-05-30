@@ -1,5 +1,5 @@
 module.exports = {
     server: {
-        command: 'node node_modules/react-scripts/scripts/start.js'
+        command: 'node scripts/start.js'
     }
 };

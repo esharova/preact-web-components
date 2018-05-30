@@ -1,0 +1,13 @@
+.search-results {
+    &__items {
+        overflow-x: hidden;
+        background: #FAFAFA;
+        width: 100%;
+        text-align: left;
+        min-height: 100px;
+        max-height: 400px;
+        overflow: auto;
+        overflow-x: hidden;
+        overflow-scrolling: touch;
+    }
+}

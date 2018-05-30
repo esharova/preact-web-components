@@ -1,0 +1,8 @@
+.search-box {
+    border: 1px solid #AAA;
+    border-radius: 3px;
+    margin: 5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    flex: 1;
+    overflow: hidden;
+}

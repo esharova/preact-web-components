@@ -1,14 +1,18 @@
 import { h, render, cloneElement, Component } from 'preact'; /** @jsx h */
+import cn from 'cn-decorator';
+
+import './search-results.css';
 
 const SEARCH = '//api.github.com/search/repositories?q=';
 
+@cn('search-results')
 export class SearchResults extends Component {
-    render() {
+    render(cn) {
         const { query } = this.props;
         return (
-            <Fetch url={SEARCH+encodeURIComponent(query)} as="json">
+            <Fetch className={ cn() } url={SEARCH+encodeURIComponent(query)} as="json">
                 { ({ loading, data }) => (
-                    <div class="items">
+                    <div className={ cn('items') }>
                         { (data && data.items || []).map( item => <Result {...item} /> ) }
                         { loading && <progress-spinner /> }
                     </div>
@@ -18,9 +22,11 @@ export class SearchResults extends Component {
     }
 }
 
+// FIXME: dirty hack (use redux for this purpose)
 class Fetch extends Component {
     state = { loading:true };
     cache = {};
+
     componentDidUpdate({ url }) {
         if (url!==this.props.url) this.componentWillMount();
     }
@@ -30,8 +36,10 @@ class Fetch extends Component {
         (this.cache[url] || (this.cache[url] = fetch(url).then( r => r[as]() )))
             .then( data => this.setState({ loading:false, data }) );
     }
-    render({ children:[child] }, state) {
-        return typeof child==='function' ? child(state) : cloneElement(child, state);
+    render() {
+        return typeof this.props.children[0] ==='function'
+            ? this.props.children[0](this.state)
+            : cloneElement(this.props.children[0], this.state);
     }
 }
 
